@@ -9,13 +9,17 @@ import org.junit.jupiter.api.Test;
 
 class CamelCaseTest {
 	
-	ArrayList<String> palavras;
+	ArrayList<String> palavras, palavrasNumberMid;
 	
 	@BeforeEach
 	void inicializeCamelCase() {
 		palavras = new ArrayList<String>();
 		palavras.add("nome");
 		palavras.add("composto");
+		palavrasNumberMid = new ArrayList<String>();
+		palavrasNumberMid.add("recupera");
+		palavrasNumberMid.add("10");
+		palavrasNumberMid.add("primeiros");
 	}
 
 	@Test
@@ -55,7 +59,10 @@ class CamelCaseTest {
 		assertArrayEquals(palavras.toArray(), CamelCase.quebraTexto("nomeComposto").toArray());
 	}
 	
-	
+	@Test
+	void numberMid() {
+		assertArrayEquals(palavrasNumberMid.toArray(), CamelCase.converterCamelCase("recupera10Primeiros").toArray());
+	}
 
 	
 }
