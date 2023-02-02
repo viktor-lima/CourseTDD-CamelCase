@@ -40,22 +40,22 @@ class CamelCaseTest {
 	@Test
 	void shouldInsertOneCompoundString() {
 		CamelCase cc = new CamelCase();
-		
 		assertEquals(palavras.toString(), cc.converterCamelCase("NomeComposto").toString());
+		assertEquals(palavrasNumberMid.toString(), cc.converterCamelCase("recupera10Primeiros").toString());
 	}
 	
 	@Test
-	public void shoudConvertCamelCase(){
+	void shoudConvertCamelCase(){
 		assertArrayEquals(palavras.toArray(), CamelCase.converterCamelCase("nomeComposto").toArray());
 	}
 	
 	@Test
-	public void shoudlowercaseSwords(){
+	void shoudlowercaseSwords(){
 		assertEquals("nome", CamelCase.palavraMinuscula("Nome"));
 	}
 	
 	@Test
-	public void shoudSplitText(){
+	void shoudSplitText(){
 		assertArrayEquals(palavras.toArray(), CamelCase.quebraTexto("nomeComposto").toArray());
 	}
 	
